@@ -60,9 +60,23 @@
   <p>「Continue to the Internet」ボタンを押すと<br/>
   ゲストWi-Fiをご利用いただけます。</p>
 
-  <form method="POST" action="/login">
-    <input type="hidden" name="accept_terms" value="yes" />
-    <button type="submit">Continue to the Internet</button>
+   <form method="GET">
+    <input type="hidden" name="continue_url" id="continue_url">
+    <button type="submit" class="button">Continue to the Internet</button>
   </form>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const grantUrl = params.get("base_grant_url");
+    const userContinueUrl = params.get("user_continue_url") || "http://example.com";
+
+    if (grantUrl) {
+      document.querySelector("form").action = grantUrl;
+      document.getElementById("continue_url").value = userContinueUrl;
+    } else {
+      document.body.innerHTML = "<p style='color:red;'>This page must be accessed via Meraki splash system.</p>";
+    }
+  </script>
+  
 </body>
 </html>
