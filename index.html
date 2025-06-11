@@ -3,11 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <title>Guest Wi-Fi</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #f5f7fa;
+      color:#5d5d5d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 1vh;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+  }
+
+    img {
+      // max-width: 200px;
+      height: auto;
+      // margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin: 0.5em 0;
+    }
+
+    form {
+      margin-top: 30px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
+  <img src="logo_tnlmediagene.png" alt="Company Logo" />
   <h1>Welcome to TNL Mediagene</h1>
-  <p>・TNL Mediageneグループにご訪問いただきありがとうございます。</p>
-  <p>・「Continue to the Internet」ボタンを押すとゲストW-Fiをご利用いただけます。</p>
+  <p>「Continue to the Internet」ボタンを押すと<br/>
+  ゲストWi-Fiをご利用いただけます。</p>
 
   <form method="POST" action="/login">
     <input type="hidden" name="accept_terms" value="yes" />
